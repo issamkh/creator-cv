@@ -1,0 +1,35 @@
+easy_admin:
+    entities:
+        Experiences:
+            class: App\Entity\Experiences
+            list:
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+            new:
+
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'list' , icon: 'list' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+
+
+            edit:
+
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'list' , icon: 'list' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+
+
+            form:
+                fields:
+                    - {property : 'post' ,type: 'text'}
+                    - {property : 'client', type: 'text'}
+                    - {property : 'dateDebut'}
+                    - {property : 'dateFin'}
+                    - {property: 'description' , type: 'fos_ckeditor' }
+                    - {property : 'user' , role: ROLE_ADMIN}

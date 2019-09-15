@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8" />
 </head>
+{% block head_css %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% endblock %}
+{% block head_js %}
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% endblock %}
 <body>
+
 <div>
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -25,9 +34,7 @@
     {% endfor %}
 {% endif %}
 
-<div>
     {% block fos_user_content %}
     {% endblock fos_user_content %}
-</div>
 </body>
 </html>

@@ -1,0 +1,67 @@
+easy_admin:
+    design:
+        assets:
+            js:
+                - https://maps.googleapis.com/maps/api/js?key=AIzaSyCsvnXjUuSSF4wstBao9oG6C8OA-ZehAXE&libraries=places&amp;sensor=true"
+                - front/js/custom-admin-js.js
+    entities:
+           User:
+              class: App\Entity\User
+              list:
+                  role: ROLE_ADMIN
+                  actions: ['new','show','edit','delete']
+                  fields:
+                      - { property: 'image', template: 'bundles/vichUploader/vich_uploader_image.html.twig'  }
+                      - username
+                      - email
+                      - enabled
+                      - roles
+
+              edit:
+                  role: ROLE_ADMIN
+                  fields:
+                   - { type: 'tab' , label: 'Informations Basiques' }
+                   - username
+                   - email
+                   - { property: 'tel', type: 'tel' }
+                   - age
+                   - localisation
+                   - { type: 'tab' , label: 'Informations Professionelles' }
+                   - anneeExp
+                   - competences
+                   - { type: 'tab' , label: 'Autres Informations' }
+                   - { property: 'reseauxSociaux', type: 'App\Form\ReseauxSociauxType', by_reference: false }
+                   - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } , role: 'ROLE_SUPER_ADMIN' }
+                   - { property: 'imageFile', type: 'vich_image' }
+                   - enabled
+                  form_options: { validation_groups: ['Profile'] }
+              new:
+                  role: ROLE_ADMIN
+                  fields:
+                       - { type: 'tab' , label: 'Informations Basiques' }
+                       - username
+                       - email
+                       - localisation
+                       - { property: 'plainPassword', type : 'password' ,type_options: { required: false} }
+                       - { property: 'tel', type: 'tel' }
+                       - age
+                       - { type: 'tab' , label: 'Informations Professionelles' }
+                       - anneeExp
+                       - competences
+                       - { type: 'tab' , label: 'Autres Informations' }
+                       - { property: 'reseauxSociaux', type: 'App\Form\ReseauxSociauxType', by_reference: false }
+                       - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+                       - { property: 'imageFile', type: 'vich_image' }
+                       - enabled
+                  form_options: { validation_groups: ['Registration'] }
+
+
+              show:
+                   role: ROLE_ADMIN
+                   fields:
+                       - username
+                       - email
+                       - enabled
+                       - roles
+                       - { property: 'image', template: 'bundles/vichUploader/vich_uploader_image.html.twig'  }
+

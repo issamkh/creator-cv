@@ -1,0 +1,31 @@
+easy_admin:
+    entities:
+        Formations:
+            class: App\Entity\Formations
+            list:
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+            new:
+
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'list' , icon: 'list' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+            edit:
+
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'list' , icon: 'list' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+            form:
+                fields:
+                    - {property : 'titre'}
+                    - {property : 'etablissement'}
+                    - {property : 'dateDebut' , format: 'd/m/Y' }
+                    - {property : 'dateFin' ,   format: 'd/m/Y'}
+                    - {property : 'lieu'}
+                    - {property : 'user' , role: ROLE_ADMIN}

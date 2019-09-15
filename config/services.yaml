@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    app.path.portfolio_images: /images/portfolio
+    app.path.profile_images: /images/profile
 
 services:
     # default configuration for services in *this* file
@@ -24,5 +26,11 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    app.easy_admin.expericence.setuser:
+        class: App\EventSubscriber\EasyAdminSubscriber
+        tags:
+            - { name: kernel.event_subscriber }

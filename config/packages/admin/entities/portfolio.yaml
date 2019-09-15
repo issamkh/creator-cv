@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+       Portfolio:
+           class: App\Entity\Portfolio
+           form:
+
+               fields:
+                   - { type: 'tab' , label: 'Informations Basiques' }
+                   - { property: 'titre'}
+                   - { property: 'description' , type: 'fos_ckeditor'}
+                   - { property : 'link'}
+                   - { type: 'tab' , label: 'Autres Informations' }
+                   - { property : 'categoriePortfolio'  }
+                   - { property: 'image', type: 'collection', type_options: { entry_type: 'App\Form\ImageType' , by_reference: false }}
+                   - { property : 'user' , role: ROLE_ADMIN }
+
+           list:
+               fields:
+                   - { property : 'id'}
+                   - { property : 'titre'}
+                   - { property : 'image'}

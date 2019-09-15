@@ -1,0 +1,19 @@
+easy_admin:
+    site_name: 'CV CREATOR'
+    design:
+        brand_color: '#1ABC9C'
+        menu:
+            - { label: 'Dashboard', icon: 'home' ,role: ROLE_USER ,route: 'dash' , default : true }
+            - { label: 'Menu' }
+
+            - { entity: 'User', label: 'Users' , icon: 'user' ,role: ROLE_SUPER_ADMIN }
+            - { entity: 'Experiences', icon: 'angellist' , role: ROLE_USER }
+            - { entity: 'Formations', icon: 'graduation-cap', role: ROLE_USER }
+            - { entity: 'Portfolio', icon: 'wallet' ,role: ROLE_USER }
+            - { entity: 'Competence', icon: 'heart' ,role: ROLE_USER }
+
+            - { label: 'Settings' }
+
+            - { label: 'Profile', icon: 'cogs' ,role: ROLE_USER ,route: 'admin_redirecte_to_edite_profile' }
+
+            - { entity: 'CategoriePortfolio', label: 'Categorie', icon: 'cog' ,role: ROLE_SUPER_ADMIN }

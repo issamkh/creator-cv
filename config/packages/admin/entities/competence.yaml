@@ -1,0 +1,32 @@
+easy_admin:
+    entities:
+        Competence:
+            class: App\Entity\Competence
+            list:
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+            new:
+
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'list' , icon: 'list' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+
+
+            edit:
+
+                actions:
+                    - {name: 'edit' , icon: 'pencil' , label: false , css_selector : btn btn-secondary}
+                    - {name: 'delete' , icon: 'times' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'list' , icon: 'list' , label: false , css_selector : btn btn-secondary }
+                    - {name: 'show' , icon: 'eye' , label: false , css_selector : btn btn-secondary }
+
+
+            form:
+                fields:
+                    - {property : 'name' ,type: 'text'}
+                    - {property : 'niveau'}
+                    - {property : 'user' , role: ROLE_ADMIN}
